@@ -2,7 +2,7 @@
 
 int main()
 {
-    int w,h,sum=0,t,ans;
+    int w,h,sum=0,t,ans,g,x;
     scanf("%d %d",&w,&h);
     int a[h][w];
     t=w*h;
@@ -15,8 +15,16 @@ int main()
             sum+=a[i][j];
         }
     }
-
-    ans=t-(t%sum);
+    g=sum%t;
+    for(int i=g; ;i++)
+    {
+        if(t%i==0)
+        {
+            x=i;
+            break;
+        }
+    }
+    ans=x-g;
     printf("%d",ans);
 
     return 0;
