@@ -15,16 +15,16 @@ int main()
             sum+=a[i][j];
         }
     }
-    g=sum%t;
-    for(int i=g; ;i++)
+
+    for(int i=sum; ;i++)
     {
-        if(t%i==0)
+        if(i%t==0)
         {
             x=i;
             break;
         }
     }
-    ans=x-g;
+    ans=x-sum;
     printf("%d",ans);
 
     return 0;
