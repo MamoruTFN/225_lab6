@@ -21,89 +21,77 @@ int main()
     {
         if(o[i]=='D')
         {
-            if(dm[u][r]=='.'||dm[u][r]=='|')
+            if(u<n-1)
             {
-                dm[u][r]='|';
-                dm[u+1][r]='|';
-                if(u<n)
+                if(dm[u][r]=='.'||dm[u][r]=='|')
                 {
+                    dm[u][r]='|';
+                    dm[u+1][r]='|';
                     u++;
                 }
-
-            }
-            else if(dm[u][r]=='-')
-            {
-                dm[u][r]='+';
-                dm[u+1][r]='|';
-                if(u<n)
+                else if(dm[u][r]=='-')
                 {
+                    dm[u][r]='+';
+                    dm[u+1][r]='|';
                     u++;
                 }
             }
-
         }
         else if(o[i]=='U')
         {
-            if(dm[u][r]=='.'||dm[u][r]=='|')
+            if(u>0)
             {
-                dm[u][r]='|';
-                dm[u-1][r]='|';
-                if(u<n)
+                if(dm[u][r]=='.'||dm[u][r]=='|')
                 {
+                    dm[u][r]='|';
+                    dm[u-1][r]='|';
                     u--;
                 }
-            }
-            else if(dm[u][r]=='-')
-            {
-                dm[u][r]='+';
-                dm[u-1][r]='|';
-                if(u<n)
+                else if(dm[u][r]=='-')
                 {
+                    dm[u][r]='+';
+                    dm[u-1][r]='|';
                     u--;
                 }
             }
         }
         else if(o[i]=='R')
         {
-            if(dm[u][r]=='.'||dm[u][r]=='-')
+            if(r<n-1)
             {
-                dm[u][r]='-';
-                dm[u][r+1]='-';
-                if(r<n)
+                if(dm[u][r]=='.'||dm[u][r]=='-')
                 {
+                    dm[u][r]='-';
+                    dm[u][r+1]='-';
+                    r++;
+                }
+                else if(dm[u][r]=='|')
+                {
+                    dm[u][r]='+';
+                    dm[u][r+1]='-';
                     r++;
                 }
             }
-            else if(dm[u][r]=='|')
-            {
-                dm[u][r]='+';
-                dm[u][r+1]='-';
-                if(r<n)
-                {
-                    r++;
-                }
-            }
+
         }
         else if(o[i]=='L')
         {
-            if(dm[u][r]=='.'||dm[u][r]=='-')
+            if(r>0)
             {
-                dm[u][r]='-';
-                dm[u][r-1]='-';
-                if(r<n)
+                if(dm[u][r]=='.'||dm[u][r]=='-')
                 {
+                    dm[u][r]='-';
+                    dm[u][r-1]='-';
+                    r--;
+                }
+                else if(dm[u][r]=='|')
+                {
+                    dm[u][r]='+';
+                    dm[u][r-1]='-';
                     r--;
                 }
             }
-            else if(dm[u][r]=='|')
-            {
-                dm[u][r]='+';
-                dm[u][r-1]='-';
-                if(r<n)
-                {
-                    r--;
-                }
-            }
+
         }
 
     }
@@ -116,7 +104,7 @@ int main()
         }
         printf("\n");
     }
-    printf("\n");
+
 
 
     return 0;
