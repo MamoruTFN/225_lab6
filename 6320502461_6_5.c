@@ -4,15 +4,15 @@ int main()
 {
     int w,h,sum=0,t,ans;
     scanf("%d %d",&w,&h);
-    int a[w];
+    int a[h][w];
     t=w*h;
 
     for(int i=0;i<h;i++)
     {
         for(int j=0;j<w;j++)
         {
-            scanf("%d",&a[j]);
-            sum+=a[j];
+            scanf("%d",&a[i][j]);
+            sum+=a[i][j];
         }
     }
 
