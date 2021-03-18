@@ -2,40 +2,42 @@
 
 int main()
 {
-    int n,q,i,z,c=0,l,max=0,j;
+    int n,q,i,z,c=0,l,max;
     char o;
     scanf("%d %d",&n,&q);
     int a[n],p[n];
 
-    for(j=0;j<n;j++)
+    for(int j=0;j<n;j++)
     {
         a[j]=0;
         p[j]=0;
     }
 
-    for(j=0;j<q;j++)
+    for(int j=0;j<q;j++)
     {
 
         scanf(" %c %d %d",&o,&i,&z);
         if(o=='U')
         {
-            a[i]=z;
+            a[i-1]=z;
         }
         else if(o=='P')
         {
-            for(int k=i-1;k<z;k++)
+            max=a[i-1];
+            for(int k=i;k<z;k++)
             {
-                if(a[k]>=max)
+                if(max<a[k])
                 {
                     max=a[k];
-                    p[c]=a[k];
+
                 }
             }
+            p[c]=max;
             c++;
-            max=0;
+
         }
     }
-    for(j=0;j<c;j++)
+    for(int j=0;j<c;j++)
     {
         printf("%d\n",p[j]);
     }
