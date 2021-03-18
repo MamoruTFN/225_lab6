@@ -7,9 +7,9 @@ int main()
     scanf("%d",&n);
     char dm[n][n],o[250];
 
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
     {
-        for(int j=0;j<n;j++)
+        for(int j=0; j<n; j++)
         {
             dm[i][j]='.';
         }
@@ -17,7 +17,7 @@ int main()
 
     scanf("%s",o);
 
-    for(int i=0;i<strlen(o);i++)
+    for(int i=0; i<strlen(o); i++)
     {
         if(o[i]=='D')
         {
@@ -30,7 +30,7 @@ int main()
             else if(dm[u][r]=='-')
             {
                 dm[u][r]='+';
-
+                dm[u+1][r]='|';
                 u++;
             }
 
@@ -46,7 +46,7 @@ int main()
             else if(dm[u][r]=='-')
             {
                 dm[u][r]='+';
-
+                dm[u-1][r]='|';
                 u--;
             }
         }
@@ -55,13 +55,13 @@ int main()
             if(dm[u][r]=='.'||dm[u][r]=='-')
             {
                 dm[u][r]='-';
-                dm[u+1][r]='-';
+                dm[u][r+1]='-';
                 r++;
             }
             else if(dm[u][r]=='|')
             {
                 dm[u][r]='+';
-
+                dm[u][r+1]='-';
                 r++;
             }
         }
@@ -70,26 +70,28 @@ int main()
             if(dm[u][r]=='.'||dm[u][r]=='-')
             {
                 dm[u][r]='-';
-                dm[u-1][r]='-';
+                dm[u][r-1]='-';
                 r--;
             }
             else if(dm[u][r]=='|')
             {
                 dm[u][r]='+';
-
+                dm[u][r-1]='-';
                 r--;
             }
         }
-    }
 
-    for(int i=0;i<n;i++)
+    }
+    for(int i=0; i<n; i++)
     {
-        for(int j=0;j<n;j++)
+        for(int j=0; j<n; j++)
         {
             printf("%c",dm[i][j]);
         }
         printf("\n");
     }
+
+
 
     return 0;
 }
