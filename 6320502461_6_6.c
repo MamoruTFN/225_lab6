@@ -25,13 +25,20 @@ int main()
             {
                 dm[u][r]='|';
                 dm[u+1][r]='|';
-                u++;
+                if(u<n)
+                {
+                    u++;
+                }
+
             }
             else if(dm[u][r]=='-')
             {
                 dm[u][r]='+';
                 dm[u+1][r]='|';
-                u++;
+                if(u<n)
+                {
+                    u++;
+                }
             }
 
         }
@@ -41,13 +48,19 @@ int main()
             {
                 dm[u][r]='|';
                 dm[u-1][r]='|';
-                u--;
+                if(u<n)
+                {
+                    u--;
+                }
             }
             else if(dm[u][r]=='-')
             {
                 dm[u][r]='+';
                 dm[u-1][r]='|';
-                u--;
+                if(u<n)
+                {
+                    u--;
+                }
             }
         }
         else if(o[i]=='R')
@@ -56,13 +69,19 @@ int main()
             {
                 dm[u][r]='-';
                 dm[u][r+1]='-';
-                r++;
+                if(r<n)
+                {
+                    r++;
+                }
             }
             else if(dm[u][r]=='|')
             {
                 dm[u][r]='+';
                 dm[u][r+1]='-';
-                r++;
+                if(r<n)
+                {
+                    r++;
+                }
             }
         }
         else if(o[i]=='L')
@@ -71,17 +90,24 @@ int main()
             {
                 dm[u][r]='-';
                 dm[u][r-1]='-';
-                r--;
+                if(r<n)
+                {
+                    r--;
+                }
             }
             else if(dm[u][r]=='|')
             {
                 dm[u][r]='+';
                 dm[u][r-1]='-';
-                r--;
+                if(r<n)
+                {
+                    r--;
+                }
             }
         }
 
     }
+
     for(int i=0; i<n; i++)
     {
         for(int j=0; j<n; j++)
@@ -90,7 +116,7 @@ int main()
         }
         printf("\n");
     }
-
+    printf("\n");
 
 
     return 0;
