@@ -14,9 +14,6 @@ int main()
         a/=10;
         b2[i]=b%10;
         b/=10;
-    }
-    for(int i=0;i<n;i++)
-    {
         if(a2[i]==b2[i])
         {
             c1++;
@@ -26,6 +23,7 @@ int main()
             c2++;
         }
     }
+
     printf("%d %d",c1,c2);
 
     return 0;
