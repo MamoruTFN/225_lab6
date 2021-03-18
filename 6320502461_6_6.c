@@ -21,39 +21,39 @@ int main()
     {
         if(o[i]=='D')
         {
-            if(dm[u][r]=='.'||dm[u][r]=='|')
+            if(dm[u][r]=='-')
             {
                 dm[u][r]='|';
-                u--;
+                u++;
             }
-            else
+            else if(dm[u][r]=='.'||dm[u][r]=='|')
             {
                 dm[u][r]='+';
-                u--;
+                u++;
             }
 
         }
         else if(o[i]=='U')
         {
-            if(dm[u][r]=='.'||dm[u][r]=='|')
+            if(dm[u][r]=='-')
             {
                 dm[u][r]='|';
-                u++;
+                u--;
             }
-            else
+            else if(dm[u][r]=='.'||dm[u][r]=='|')
             {
                 dm[u][r]='+';
-                u++;
+                u--;
             }
         }
         else if(o[i]=='R')
         {
-            if(dm[u][r]=='.'||dm[u][r]=='-')
+            if(dm[u][r]=='|')
             {
                 dm[u][r]='-';
                 r++;
             }
-            else
+            else if(dm[u][r]=='.'||dm[u][r]=='-')
             {
                 dm[u][r]='+';
                 r++;
@@ -61,12 +61,12 @@ int main()
         }
         else if(o[i]=='L')
         {
-            if(dm[u][r]=='.'||dm[u][r]=='-')
+            if(dm[u][r]=='|')
             {
                 dm[u][r]='-';
                 r--;
             }
-            else
+            else if(dm[u][r]=='.'||dm[u][r]=='-')
             {
                 dm[u][r]='+';
                 r--;
