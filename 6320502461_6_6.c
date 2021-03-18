@@ -30,7 +30,7 @@ int main()
             else if(dm[u][r]=='-')
             {
                 dm[u][r]='+';
-                dm[u+1][r]='|';
+
                 u++;
             }
 
@@ -46,7 +46,7 @@ int main()
             else if(dm[u][r]=='-')
             {
                 dm[u][r]='+';
-                dm[u-1][r]='|';
+
                 u--;
             }
         }
@@ -61,7 +61,7 @@ int main()
             else if(dm[u][r]=='|')
             {
                 dm[u][r]='+';
-                dm[u+1][r]='-';
+
                 r++;
             }
         }
@@ -76,7 +76,7 @@ int main()
             else if(dm[u][r]=='|')
             {
                 dm[u][r]='+';
-                dm[u-1][r]='-';
+
                 r--;
             }
         }
