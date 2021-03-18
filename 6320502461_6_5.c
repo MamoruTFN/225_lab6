@@ -4,12 +4,12 @@ int main()
 {
     int w,h,sum=0,t,ans,g,x;
     scanf("%d %d",&w,&h);
-    int a[h][w];
+    int a[w][h];
     t=w*h;
 
-    for(int i=0;i<h;i++)
+    for(int i=0;i<w;i++)
     {
-        for(int j=0;j<w;j++)
+        for(int j=0;j<h;j++)
         {
             scanf("%d",&a[i][j]);
             sum+=a[i][j];
